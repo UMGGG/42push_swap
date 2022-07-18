@@ -6,8 +6,14 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:13 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/18 21:48:06 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/18 21:59:53 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	main(void)
+{
+	ft_printf("ABCDEFG!!!\n");
+	return (0);
+}

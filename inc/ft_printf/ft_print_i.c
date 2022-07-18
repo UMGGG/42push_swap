@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_print_i.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/18 21:58:43 by jaeyjeon         ###   ########.fr       */
+/*   Created: 2022/04/14 16:45:11 by jaeyjeon          #+#    #+#             */
+/*   Updated: 2022/04/22 01:57:32 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_printf.h"
 
-# include <stdio.h>
-# include <fcntl.h>
-# include "inc/ft_printf/ft_printf.h"
+ssize_t	ft_print_i(va_list **a)
+{
+	int		vatemp;
+	char	*str;
+	ssize_t	print_size;
 
-#endif
+	print_size = 0;
+	vatemp = (int)va_arg(**a, int);
+	if (vatemp == 0)
+		print_size = write(1, "0", 1);
+	else
+	{
+		str = ft_itoa(vatemp);
+		print_size = write(1, str, ft_strlen(str));
+		free(str);
+	}
+	return (print_size);
+}

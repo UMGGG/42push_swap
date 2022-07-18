@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_print_sx.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/18 21:58:43 by jaeyjeon         ###   ########.fr       */
+/*   Created: 2022/04/14 16:44:22 by jaeyjeon          #+#    #+#             */
+/*   Updated: 2022/04/26 18:29:36 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ft_printf.h"
 
-# include <stdio.h>
-# include <fcntl.h>
-# include "inc/ft_printf/ft_printf.h"
+ssize_t	ft_print_sx(va_list **a)
+{
+	unsigned int	vatemp;
+	ssize_t			print_size;
+	char			*str;
 
-#endif
+	print_size = 0;
+	vatemp = (unsigned int)va_arg(**a, unsigned int);
+	if (vatemp == 0)
+		return (write(1, "0", 1));
+	str = ft_change_hexa((long long)vatemp, 1);
+	print_size = write(1, str, ft_strlen(str));
+	free(str);
+	return (print_size);
+}
