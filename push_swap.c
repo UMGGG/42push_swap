@@ -6,39 +6,32 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:13 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/18 22:13:49 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/21 02:41:18 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_argv(char *str)
-{
-	while (*str)
-	{
-		if (*str < '0' || *str > '9' )
-			return (1);
-		str++;
-	}
-	return (0);
-}
-
 int	main(int argc, char **argv)
 {
-	int	i;
+	t_deque	*deq_a;
+	t_deque	*deq_b;
+	t_node	*currnode;
 
-	i = 1;
-	if (argc == 1)
-	{
-		ft_printf("nothing turned in!!\n");
+	if (check_argv(argc, argv))
 		return (0);
-	}
-	while (i != argc)
-	{
-		ft_printf("check %s\n", argv[i]);
-		if (check_argv(argv[i]))
-			return (0);
-		i++;
-	}
-	ft_printf("good\n");
+	deq_a = make_deque();
+	deq_b = make_deque();
+	printf("%s  %s  %s  \n", argv[1], argv[2], argv[3]);
+	add_node(deq_a, ft_atoi(argv[1]));
+	add_node(deq_b, 0);
+	currnode = deq_a->first;
+	add_node(deq_a, ft_atoi(argv[2]));
+	add_node(deq_a, ft_atoi(argv[3]));
+	ft_printf("%d\n", currnode->num);
+	currnode = currnode->next;
+	ft_printf("%d\n", currnode->num);
+	currnode = currnode->next;
+	ft_printf("%d\n", currnode->num);
+	currnode = currnode->next;
 }
