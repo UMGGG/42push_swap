@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/21 02:46:47 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/22 03:46:54 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,20 @@ typedef struct s_deque
 	t_node	*last;
 }	t_deque;
 
+char	*ft_strndup(const char *s, size_t n);
+char	**ft_freeall(char **list);
+char	**ft_split(char const *s, char c);
+size_t	ft_wordcount(char const *s, char c);
 int		check_argv(int argc, char **argv);
+int		check_str_num(char *argv);
 int		check_whitespace(const char *str);
 int		ft_atoi(const char *str);
 int		return_error(char *str);
-t_node	*add_node(t_deque *deq, int num);
+int		add_node(t_deque *deq, int num);
+int		add_node_list(t_deque *deq, char *argv);
+int		add_in_deq(int argc, char **argv, t_deque *deq);
 t_deque	*make_deque(void);
+void	free_all(t_deque *deq);
+void	free_list(char	**list);
 
 #endif

@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 21:45:13 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 03:47:24 by jaeyjeon         ###   ########.fr       */
+/*   Created: 2022/07/22 03:34:18 by jaeyjeon          #+#    #+#             */
+/*   Updated: 2022/07/22 03:46:23 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ls(void)
+void	free_all(t_deque *deq)
 {
-	system("leaks push_swap");
+	t_node	*curr;
+	t_node	*save;
+
+	curr = deq->last;
+	while (curr != deq->first)
+	{
+		save = curr->prev;
+		free(curr);
+		curr = save;
+	}
+	free (curr);
+	free (deq);
 }
 
-int	main(int argc, char **argv)
+void	free_list(char	**list)
 {
-	t_deque	*deq_a;
-	t_node	*curr;
+	int	i;
 
-	if (check_argv(argc, argv))
-		return (0);
-	deq_a = make_deque();
-	if (add_in_deq(argc, argv, deq_a))
-		return (0);
-	curr = deq_a->first;
-	while (curr)
+	i = 0;
+	while (list[i] != NULL)
 	{
-		ft_printf("%d\n", curr->num);
-		curr = curr->next;
+		free (list[i]);
+		i++;
 	}
-	free_all(deq_a);
-	return (0);
+	free (list[i]);
+	free (list);
 }

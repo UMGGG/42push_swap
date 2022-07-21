@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:22:22 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/21 02:47:33 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/22 03:27:50 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,20 @@ int	check_argv(int argc, char **argv)
 			str++;
 		}
 		i++;
+	}
+	return (0);
+}
+
+int	check_str_num(char *argv)
+{
+	char	*str;
+
+	str = argv;
+	while (*str)
+	{
+		if (*str == ' ')
+			return (1);
+		str++;
 	}
 	return (0);
 }
