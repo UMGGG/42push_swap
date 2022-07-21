@@ -6,7 +6,7 @@
 #    By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/18 21:48:48 by jaeyjeon          #+#    #+#              #
-#    Updated: 2022/07/22 03:34:27 by jaeyjeon         ###   ########.fr        #
+#    Updated: 2022/07/22 04:01:17 by jaeyjeon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RM			= rm -rf
 INC_DIR		= ./inc/ft_printf
 
 SRCS		= push_swap.c ft_atoi.c check_num.c make_node.c ft_split.c free_all.c\
-
+			make_deque.c
 
 OBJS		=	$(SRCS:.c=.o)
 

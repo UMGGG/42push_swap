@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   make_deque.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 21:45:13 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 04:22:24 by jaeyjeon         ###   ########.fr       */
+/*   Created: 2022/07/22 04:00:41 by jaeyjeon          #+#    #+#             */
+/*   Updated: 2022/07/22 04:00:57 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ls(void)
+t_deque	*make_deque(void)
 {
-	system("leaks push_swap");
+	t_deque	*new_deque;
+
+	new_deque = malloc(sizeof(t_deque));
+	new_deque->first = NULL;
+	new_deque->last = NULL;
+	return (new_deque);
 }
 
-int	main(int argc, char **argv)
+int	add_in_deq(int argc, char **argv, t_deque *deq)
 {
-	t_deque	*deq_a;
-	t_deque	*deq_b;
-	t_node	*curr;
+	int		i;
 
-	if (check_argv(argc, argv))
-		return (0);
-	deq_a = make_deque();
-	deq_b = make_deque();
-	if (add_in_deq(argc, argv, deq_a))
+	i = 1;
+	while (i != argc)
 	{
-		free_all(deq_a);
-		return (0);
+		if (check_str_num(argv[i]))
+		{
+			if (add_node_list(deq, argv[i]))
+				return (1);
+		}
+		else
+		{
+			if (add_node(deq, ft_atoi(argv[i])))
+				return (1);
+		}
+		i++;
 	}
-	free_all(deq_b);
-	free_all(deq_a);
 	return (0);
 }
