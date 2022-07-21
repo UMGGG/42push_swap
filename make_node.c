@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 01:54:32 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 03:46:44 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/22 03:55:59 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	add_node(t_deque *deq, int num)
 {
 	t_node	*new_node;
 
+	if (check_each_num(deq, num))
+		return (1);
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
 		return (1);

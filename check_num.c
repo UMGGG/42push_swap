@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:22:22 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 03:27:50 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/22 03:57:47 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,20 @@ int	check_str_num(char *argv)
 		if (*str == ' ')
 			return (1);
 		str++;
+	}
+	return (0);
+}
+
+int	check_each_num(t_deque	*deq, int num)
+{
+	t_node	*curr;
+
+	curr = deq->first;
+	while (curr != NULL)
+	{
+		if (curr->num == num)
+			return (return_error("Duplicated numbers"));
+		curr = curr->next;
 	}
 	return (0);
 }
