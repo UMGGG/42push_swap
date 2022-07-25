@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 04:23:45 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/25 17:37:27 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@ int		check_whitespace(const char *str);
 int		check_duplicate(t_deque	*deq, int num);
 int		ft_atoi(const char *str);
 int		return_error(char *str);
-int		add_node(t_deque *deq, int num);
-int		add_node_list(t_deque *deq, char *argv);
-int		add_in_deq(int argc, char **argv, t_deque *deq);
+int		push_node_back(t_deque *deq, int num);
+int		push_node_front(t_deque *deq, int num);
+int		push_node_for_list(t_deque *deq, char *argv);
+int		push_in_deq(int argc, char **argv, t_deque *deq);
+int		pop_node_front(t_deque *deq);
 int		start_sort(t_deque *deq_a, t_deque *deq_b);
-t_deque	*make_deque(void);
-void	free_all(t_deque *deq);
+int		free_all(t_deque *deq_a, t_deque *deq_b);
 void	free_list(char	**list);
+t_deque	*make_deque(void);
 
 #endif

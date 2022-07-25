@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 04:00:41 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 04:00:57 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/25 17:23:09 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_deque	*make_deque(void)
 	return (new_deque);
 }
 
-int	add_in_deq(int argc, char **argv, t_deque *deq)
+int	push_in_deq(int argc, char **argv, t_deque *deq)
 {
 	int		i;
 
@@ -31,12 +31,12 @@ int	add_in_deq(int argc, char **argv, t_deque *deq)
 	{
 		if (check_str_num(argv[i]))
 		{
-			if (add_node_list(deq, argv[i]))
+			if (push_node_for_list(deq, argv[i]))
 				return (1);
 		}
 		else
 		{
-			if (add_node(deq, ft_atoi(argv[i])))
+			if (push_node_back(deq, ft_atoi(argv[i])))
 				return (1);
 		}
 		i++;

@@ -6,26 +6,37 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 03:34:18 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 03:46:23 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/25 17:05:07 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_all(t_deque *deq)
+int	free_all(t_deque *deq_a, t_deque *deq_b)
 {
 	t_node	*curr;
 	t_node	*save;
 
-	curr = deq->last;
-	while (curr != deq->first)
+	curr = deq_a->last;
+	while (curr != deq_a->first)
 	{
 		save = curr->prev;
 		free(curr);
 		curr = save;
 	}
 	free (curr);
-	free (deq);
+	curr = deq_b->last;
+	while (curr != deq_b->first)
+	{
+		save = curr->prev;
+		free(curr);
+		curr = save;
+	}
+	free (curr);
+	free (deq_a);
+	free (deq_b);
+	exit(0);
+	return (0);
 }
 
 void	free_list(char	**list)
