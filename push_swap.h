@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/27 02:33:07 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/27 03:08:14 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strndup(const char *s, size_t n);
 char	**ft_freeall(char **list);
 char	**ft_split(char const *s, char c);
 size_t	ft_wordcount(char const *s, char c);
+int		print_deq(t_deque *deq);
+int		is_sorted(t_deque *deq);
 int		check_argv(int argc, char **argv);
 int		check_str_num(char *argv);
 int		check_whitespace(const char *str);

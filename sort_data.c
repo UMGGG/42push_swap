@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 04:22:47 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 04:24:40 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/27 03:23:27 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int	start_sort(t_deque *deq_a, t_deque *deq_b)
 {
-
+	if (deq_a->first == deq_a->last)
+		return (0);
 }
