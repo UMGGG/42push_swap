@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 01:54:32 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/25 17:37:55 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:13:07 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,19 @@ int	pop_node_front(t_deque *deq)
 	deq->first = save;
 	save->prev = NULL;
 	return (1);
+}
+
+int	pop_node_back(t_deque *deq)
+{
+	t_node	*save;
+
+	if (deq->last == NULL)
+		return (0);
+	save = deq->last->prev;
+	free(deq->last);
+	deq->last = save;
+	save->next = NULL;
+	return (0);
 }
 
 int	push_node_for_list(t_deque *deq, char *argv)

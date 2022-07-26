@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/25 17:37:27 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:02:07 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int		push_node_front(t_deque *deq, int num);
 int		push_node_for_list(t_deque *deq, char *argv);
 int		push_in_deq(int argc, char **argv, t_deque *deq);
 int		pop_node_front(t_deque *deq);
+int		pop_node_back(t_deque *deq);
+int		do_sa(t_deque *deq);
 int		start_sort(t_deque *deq_a, t_deque *deq_b);
 int		free_all(t_deque *deq_a, t_deque *deq_b);
 void	free_list(char	**list);

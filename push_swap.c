@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:13 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/25 17:38:17 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/26 21:17:50 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int	main(int argc, char **argv)
 		return (0);
 	if (push_in_deq(argc, argv, deq_a))
 		return (free_all(deq_a, deq_b));
-	push_node_back(deq_a, 9028);
 	pop_node_front(deq_a);
+	pop_node_back(deq_a);
+	do_sa(deq_a);
 	curr = deq_a->first;
 	while (curr)
 	{
