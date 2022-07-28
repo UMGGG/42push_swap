@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:20:40 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 02:57:32 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 03:16:13 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	do_r(t_deque *deq)
 int	do_ra(t_deque *deq_a, t_deque *deq_str)
 {
 	if (do_r(deq_a))
-		push_node_back(deq_str, 6);
+		push_node_back_for_str(deq_str, 6);
 	else
 		return (1);
 	return (0);
@@ -36,7 +36,7 @@ int	do_ra(t_deque *deq_a, t_deque *deq_str)
 int	do_rb(t_deque *deq_b, t_deque *deq_str)
 {
 	if (do_r(deq_b))
-		push_node_back(deq_str, 7);
+		push_node_back_for_str(deq_str, 7);
 	else
 		return (1);
 	return (0);
@@ -52,6 +52,6 @@ int	do_rr(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 	if (check_num == 0)
 		return (1);
 	else
-		push_node_back(deq_str, 8);
+		push_node_back_for_str(deq_str, 8);
 	return (0);
 }
