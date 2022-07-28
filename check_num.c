@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:22:22 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/22 04:08:49 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/28 01:49:54 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,22 @@ int	check_argv(int argc, char **argv)
 
 	i = 1;
 	if (argc == 1)
-		return (return_error("nothing turned in"));
-	else if (argc == 2)
-		return (1);
+		return (return_error("Error"));
 	while (i != argc)
 	{
 		str = argv[i];
 		while (*str)
 		{
-			if (*str != ' ' && (*str < '0' || *str > '9'))
-				return (return_error("not allowed data"));
-			str++;
+			if (*str == '-' || *str == '+' )
+			{
+				str++;
+				if (*str < '0' || *str > '9')
+					return (return_error("Error"));
+			}
+			else if (*str != ' ' && (*str < '0' || *str > '9'))
+				return (return_error("Error"));
+			if (*str)
+				str++;
 		}
 		i++;
 	}
@@ -64,7 +69,7 @@ int	check_duplicate(t_deque	*deq, int num)
 	while (curr != NULL)
 	{
 		if (curr->num == num)
-			return (return_error("Duplicated numbers"));
+			return (return_error("Error"));
 		curr = curr->next;
 	}
 	return (0);

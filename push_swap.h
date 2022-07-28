@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/27 03:08:14 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/28 16:24:04 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		check_argv(int argc, char **argv);
 int		check_str_num(char *argv);
 int		check_whitespace(const char *str);
 int		check_duplicate(t_deque	*deq, int num);
+int		check_1_str(char *str);
 int		ft_atoi(const char *str);
 int		return_error(char *str);
 int		push_node_back(t_deque *deq, int num);
@@ -63,6 +64,10 @@ int		do_rra(t_deque *deq_a);
 int		do_rrb(t_deque *deq_b);
 int		do_rrr(t_deque *deq_a, t_deque *deq_b);
 int		start_sort(t_deque *deq_a, t_deque *deq_b);
+int		sort_3(t_deque *deq);
+int		sort_4(t_deque *deq_a, t_deque *deq_b);
+int		sort_5(t_deque *deq_a, t_deque *deq_b);
+int		find_mid(t_deque *deq);
 int		free_all(t_deque *deq_a, t_deque *deq_b);
 void	free_list(char	**list);
 t_deque	*make_deque(void);
