@@ -6,13 +6,13 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:16:28 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/27 02:48:10 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 02:56:35 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	do_pa(t_deque *deq_a, t_deque *deq_b)
+int	do_pa(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 {
 	int	save;
 
@@ -21,11 +21,11 @@ int	do_pa(t_deque *deq_a, t_deque *deq_b)
 	save = deq_b->first->num;
 	pop_node_front(deq_b);
 	push_node_front(deq_a, save);
-	ft_printf("pa\n");
+	push_node_back(deq_str, 4);
 	return (0);
 }
 
-int	do_pb(t_deque *deq_a, t_deque *deq_b)
+int	do_pb(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 {
 	int	save;
 
@@ -34,6 +34,6 @@ int	do_pb(t_deque *deq_a, t_deque *deq_b)
 	save = deq_a->first->num;
 	pop_node_front(deq_a);
 	push_node_front(deq_b, save);
-	ft_printf("pb\n");
+	push_node_back(deq_str, 5);
 	return (0);
 }

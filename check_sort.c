@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:57:14 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/28 01:06:07 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 03:11:23 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,32 @@ int	is_sorted(t_deque *deq)
 	return (nodecounter);
 }
 
+char	*print_command(int num)
+{
+	if (num == 1)
+		return ("sa\n");
+	else if (num == 2)
+		return ("sb\n");
+	else if (num == 3)
+		return ("ss\n");
+	else if (num == 4)
+		return ("pa\n");
+	else if (num == 5)
+		return ("pb\n");
+	else if (num == 6)
+		return ("ra\n");
+	else if (num == 7)
+		return ("rb\n");
+	else if (num == 8)
+		return ("rr\n");
+	else if (num == 9)
+		return ("rra\n");
+	else if (num == 10)
+		return ("rrb\n");
+	else
+		return ("rrr\n");
+}
+
 int	print_deq(t_deque *deq)
 {
 	t_node	*curr;
@@ -47,7 +73,7 @@ int	print_deq(t_deque *deq)
 	curr = deq->first;
 	while (curr)
 	{
-		ft_printf("%d\n", curr->num);
+		ft_printf("%s", print_command(curr->num));
 		curr = curr->next;
 	}
 	return (0);

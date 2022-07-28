@@ -6,13 +6,13 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 04:22:47 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/28 17:07:21 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 02:59:51 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sort_3(t_deque *deq)
+int	sort_3(t_deque *deq, t_deque *deq_str)
 {
 	t_node	*curr;
 
@@ -21,26 +21,26 @@ int	sort_3(t_deque *deq)
 	{
 		curr = curr->next;
 		if (deq->first->num > curr->num)
-			do_ra(deq);
+			do_ra(deq, deq_str);
 		curr = deq->first->next;
 		if (deq->first->num > curr->num)
-			do_sa(deq);
+			do_sa(deq, deq_str);
 	}
 	else
 	{
 		if (curr->num < curr->next->num)
-			do_sa(deq);
+			do_sa(deq, deq_str);
 		else if (curr->num > curr->next->num)
 		{
-			do_rra(deq);
+			do_rra(deq, deq_str);
 			if (deq->first->num > deq->first->next->num)
-				do_sa(deq);
+				do_sa(deq, deq_str);
 		}
 	}
 	return (0);
 }
 
-int	sort_4(t_deque *deq_a, t_deque *deq_b)
+int	sort_4(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 {
 	int		min;
 	t_node	*curr;
@@ -54,17 +54,17 @@ int	sort_4(t_deque *deq_a, t_deque *deq_b)
 		curr = curr->next;
 	}
 	while (deq_a->first->num != min)
-		do_ra(deq_a);
+		do_ra(deq_a, deq_str);
 	if (is_sorted(deq_a) != 1)
 	{
-		do_pb(deq_a, deq_b);
-		sort_3(deq_a);
-		do_pa(deq_a, deq_b);
+		do_pb(deq_a, deq_b, deq_str);
+		sort_3(deq_a, deq_str);
+		do_pa(deq_a, deq_b, deq_str);
 	}
 	return (0);
 }
 
-int	sort_5(t_deque *deq_a, t_deque *deq_b)
+int	sort_5(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 {
 	int		mid;
 	int		countpb;
@@ -74,23 +74,23 @@ int	sort_5(t_deque *deq_a, t_deque *deq_b)
 	while (countpb != 2)
 	{
 		if (deq_a->first->num >= mid)
-			do_ra(deq_a);
+			do_ra(deq_a, deq_str);
 		else
 		{
-			do_pb(deq_a, deq_b);
+			do_pb(deq_a, deq_b, deq_str);
 			countpb++;
 		}
 	}
 	if (is_sorted(deq_a) != 1)
-		sort_3(deq_a);
+		sort_3(deq_a, deq_str);
 	if (deq_b->first->num < deq_b->last->num)
-		do_sb(deq_b);
-	do_pa(deq_a, deq_b);
-	do_pa(deq_a, deq_b);
+		do_sb(deq_b, deq_str);
+	do_pa(deq_a, deq_b, deq_str);
+	do_pa(deq_a, deq_b, deq_str);
 	return (0);
 }
 
-int	start_sort(t_deque *deq_a, t_deque *deq_b)
+int	start_sort(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 {
 	int	node;
 
@@ -100,12 +100,12 @@ int	start_sort(t_deque *deq_a, t_deque *deq_b)
 	if (node == 1)
 		return (0);
 	else if (node == 2)
-		do_sa(deq_a);
+		do_sa(deq_a, deq_str);
 	else if (node == 3)
-		sort_3(deq_a);
+		sort_3(deq_a, deq_str);
 	else if (node == 4)
-		sort_4(deq_a, deq_b);
+		sort_4(deq_a, deq_b, deq_str);
 	else if (node == 5)
-		sort_5(deq_a, deq_b);
+		sort_5(deq_a, deq_b, deq_str);
 	return (0);
 }

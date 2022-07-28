@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/28 16:24:04 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 03:10:44 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_deque
 }	t_deque;
 
 char	*ft_strndup(const char *s, size_t n);
+char	*print_command(int num);
 char	**ft_freeall(char **list);
 char	**ft_split(char const *s, char c);
 size_t	ft_wordcount(char const *s, char c);
@@ -50,25 +51,26 @@ int		push_in_deq(int argc, char **argv, t_deque *deq);
 int		pop_node_front(t_deque *deq);
 int		pop_node_back(t_deque *deq);
 int		do_s(t_deque *deq);
-int		do_sa(t_deque *deq);
-int		do_sb(t_deque *deq);
-int		do_ss(t_deque *deq_a, t_deque *deq_b);
-int		do_pa(t_deque *deq_a, t_deque *deq_b);
-int		do_pb(t_deque *deq_a, t_deque *deq_b);
+int		do_sa(t_deque *deq, t_deque *deq_str);
+int		do_sb(t_deque *deq, t_deque *deq_str);
+int		do_ss(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
+int		do_pa(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
+int		do_pb(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
 int		do_r(t_deque *deq);
-int		do_ra(t_deque *deq_a);
-int		do_rb(t_deque *deq_b);
-int		do_rr(t_deque *deq_a, t_deque *deq_b);
+int		do_ra(t_deque *deq_a, t_deque *deq_str);
+int		do_rb(t_deque *deq_b, t_deque *deq_str);
+int		do_rr(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
 int		do_brr(t_deque *deq);
-int		do_rra(t_deque *deq_a);
-int		do_rrb(t_deque *deq_b);
-int		do_rrr(t_deque *deq_a, t_deque *deq_b);
-int		start_sort(t_deque *deq_a, t_deque *deq_b);
-int		sort_3(t_deque *deq);
-int		sort_4(t_deque *deq_a, t_deque *deq_b);
-int		sort_5(t_deque *deq_a, t_deque *deq_b);
+int		do_rra(t_deque *deq_a, t_deque *deq_str);
+int		do_rrb(t_deque *deq_b, t_deque *deq_str);
+int		do_rrr(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
+int		start_sort(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
+int		sort_3(t_deque *deq, t_deque *deq_str);
+int		sort_4(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
+int		sort_5(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
 int		find_mid(t_deque *deq);
-int		free_all(t_deque *deq_a, t_deque *deq_b);
+int		free_all(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
+int		free_deq(t_deque *deq);
 void	free_list(char	**list);
 t_deque	*make_deque(void);
 

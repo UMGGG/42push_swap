@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:27:38 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/27 02:33:12 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 02:58:16 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,25 @@ int	do_brr(t_deque *deq)
 	return (1);
 }
 
-int	do_rra(t_deque *deq_a)
+int	do_rra(t_deque *deq_a, t_deque *deq_str)
 {
 	if (do_brr(deq_a))
-		ft_printf("rra\n");
+		push_node_back(deq_str, 9);
 	else
 		return (1);
 	return (0);
 }
 
-int	do_rrb(t_deque *deq_b)
+int	do_rrb(t_deque *deq_b, t_deque *deq_str)
 {
 	if (do_brr(deq_b))
-		ft_printf("rrb\n");
+		push_node_back(deq_str, 10);
 	else
 		return (1);
 	return (0);
 }
 
-int	do_rrr(t_deque *deq_a, t_deque *deq_b)
+int	do_rrr(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 {
 	int	check_num;
 
@@ -52,6 +52,6 @@ int	do_rrr(t_deque *deq_a, t_deque *deq_b)
 	if (check_num == 0)
 		return (1);
 	else
-		ft_printf("rrr\n");
+		push_node_back(deq_str, 11);
 	return (0);
 }
