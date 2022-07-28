@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:57:14 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 03:15:51 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 04:00:01 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	push_node_back_for_str(t_deque *deq, int num)
 {
 	t_node	*new_node;
 
+	if (check_duplicate(deq, num))
+		return (1);
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
 		return (1);

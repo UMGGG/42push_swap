@@ -6,45 +6,47 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:22:22 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/28 01:49:54 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 03:51:11 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	return_error(char *str)
+int	return_error(int i)
 {
-	ft_printf("%s\n", str);
+	write(2, "Error\n", 6);
+	if (i == 1)
+		exit(0);
 	return (1);
 }
 
-int	check_argv(int argc, char **argv)
+void	check_argv(int argc, char **argv)
 {
 	int		i;
 	char	*str;
 
-	i = 1;
+	i = 0;
 	if (argc == 1)
-		return (return_error("Error"));
-	while (i != argc)
+		return_error(1);
+	while (++i != argc)
 	{
 		str = argv[i];
 		while (*str)
 		{
+			if (str[0] == ' ' && str[1] == '\0')
+				return_error(1);
 			if (*str == '-' || *str == '+' )
 			{
 				str++;
 				if (*str < '0' || *str > '9')
-					return (return_error("Error"));
+					return_error(1);
 			}
 			else if (*str != ' ' && (*str < '0' || *str > '9'))
-				return (return_error("Error"));
+				return_error(1);
 			if (*str)
 				str++;
 		}
-		i++;
 	}
-	return (0);
 }
 
 int	check_str_num(char *argv)
@@ -69,7 +71,7 @@ int	check_duplicate(t_deque	*deq, int num)
 	while (curr != NULL)
 	{
 		if (curr->num == num)
-			return (return_error("Error"));
+			return (return_error(0));
 		curr = curr->next;
 	}
 	return (0);

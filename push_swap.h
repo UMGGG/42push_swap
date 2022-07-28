@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 03:15:45 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 03:51:26 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ char	**ft_split(char const *s, char c);
 size_t	ft_wordcount(char const *s, char c);
 int		print_deq(t_deque *deq);
 int		is_sorted(t_deque *deq);
-int		check_argv(int argc, char **argv);
 int		check_str_num(char *argv);
 int		check_whitespace(const char *str);
 int		check_duplicate(t_deque	*deq, int num);
 int		check_1_str(char *str);
 int		ft_atoi(const char *str);
-int		return_error(char *str);
+int		return_error(int i);
+void	check_argv(int argc, char **argv);
 int		push_node_back(t_deque *deq, int num);
 int		push_node_front(t_deque *deq, int num);
 int		push_node_for_list(t_deque *deq, char *argv);

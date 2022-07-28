@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:13 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 03:13:24 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 03:51:51 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,10 @@ int	main(int argc, char **argv)
 	t_deque	*deq_b;
 	t_deque	*deq_str;
 
-	atexit(ls);
 	deq_a = make_deque();
 	deq_b = make_deque();
 	deq_str = make_deque();
-	if (check_argv(argc, argv))
-		return (0);
+	check_argv(argc, argv);
 	if (push_in_deq(argc, argv, deq_a))
 		return (free_all(deq_a, deq_b, deq_str));
 	start_sort(deq_a, deq_b, deq_str);

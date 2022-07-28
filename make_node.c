@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 01:54:32 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/27 02:47:17 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 03:59:57 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	push_node_back(t_deque *deq, int num)
 {
 	t_node	*new_node;
 
-	if (check_duplicate(deq, num))
-		return (1);
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
 		return (1);
@@ -42,8 +40,6 @@ int	push_node_front(t_deque *deq, int num)
 {
 	t_node	*new_node;
 
-	if (check_duplicate(deq, num))
-		return (1);
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
 		return (1);
@@ -113,7 +109,7 @@ int	push_node_for_list(t_deque *deq, char *argv)
 		return (1);
 	while (num_list[i] != NULL)
 	{
-		if (push_node_back(deq, ft_atoi(num_list[i])))
+		if (push_node_back_for_str(deq, ft_atoi(num_list[i])))
 		{
 			free_list(num_list);
 			return (1);

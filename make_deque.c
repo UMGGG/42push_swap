@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 04:00:41 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/25 17:23:09 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/29 03:59:41 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	push_in_deq(int argc, char **argv, t_deque *deq)
 		}
 		else
 		{
-			if (push_node_back(deq, ft_atoi(argv[i])))
+			if (push_node_back_for_str(deq, ft_atoi(argv[i])))
 				return (1);
 		}
 		i++;
