@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:13 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 03:51:51 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/30 08:56:33 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int	main(int argc, char **argv)
 	if (push_in_deq(argc, argv, deq_a))
 		return (free_all(deq_a, deq_b, deq_str));
 	start_sort(deq_a, deq_b, deq_str);
+	opt_str(deq_str);
 	print_deq(deq_str);
-	if (is_sorted(deq_a) == 1)
-		ft_printf("GOOD!\n");
 	return (free_all(deq_a, deq_b, deq_str));
 }

@@ -6,7 +6,7 @@
 #    By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/18 21:48:48 by jaeyjeon          #+#    #+#              #
-#    Updated: 2022/07/27 23:40:20 by jaeyjeon         ###   ########.fr        #
+#    Updated: 2022/07/30 09:16:13 by jaeyjeon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ INC_DIR		= ./inc/ft_printf
 
 SRCS		= push_swap.c ft_atoi.c check_num.c make_node.c ft_split.c free_all.c\
 			make_deque.c data_sorting_s.c data_sorting_p.c data_sorting_r.c\
-			data_sorting_rr.c check_sort.c sort_data.c
+			data_sorting_rr.c check_sort.c sort_data.c quicksort.c sort_deq.c\
+			opti_str.c opti_str2.c
 
 OBJS		=	$(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 04:22:47 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 02:59:51 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/30 05:23:41 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,20 +92,19 @@ int	sort_5(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 
 int	start_sort(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str)
 {
-	int	node;
-
 	if (deq_a->first == deq_a->last)
 		return (0);
-	node = is_sorted(deq_a);
-	if (node == 1)
+	if (is_sorted(deq_a))
 		return (0);
-	else if (node == 2)
+	else if (deq_a->size == 2)
 		do_sa(deq_a, deq_str);
-	else if (node == 3)
+	else if (deq_a->size == 3)
 		sort_3(deq_a, deq_str);
-	else if (node == 4)
+	else if (deq_a->size == 4)
 		sort_4(deq_a, deq_b, deq_str);
-	else if (node == 5)
+	else if (deq_a->size == 5)
 		sort_5(deq_a, deq_b, deq_str);
+	else
+		atob(deq_a, deq_b, deq_str, deq_a->size);
 	return (0);
 }

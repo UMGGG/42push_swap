@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:57:14 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 04:00:01 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/30 08:57:47 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,53 +15,20 @@
 int	is_sorted(t_deque *deq)
 {
 	int		num;
-	int		nodecounter;
-	int		sortchecker;
 	t_node	*curr;
 
-	nodecounter = 0;
-	sortchecker = 0;
 	if (deq->first == deq->last)
-		return (0);
+		return (1);
 	num = deq->first->num;
 	curr = deq->first;
 	while (curr)
 	{
 		if (num > curr->num)
-			sortchecker = 1;
+			return (0);
 		num = curr->num;
 		curr = curr->next;
-		nodecounter++;
 	}
-	if (sortchecker == 0)
-		return (1);
-	return (nodecounter);
-}
-
-int	push_node_back_for_str(t_deque *deq, int num)
-{
-	t_node	*new_node;
-
-	if (check_duplicate(deq, num))
-		return (1);
-	new_node = malloc(sizeof(t_node));
-	if (new_node == NULL)
-		return (1);
-	new_node->num = num;
-	new_node->next = NULL;
-	new_node->prev = deq->last;
-	if (deq->last == NULL && deq->first == NULL)
-	{
-		deq->last = new_node;
-		deq->first = new_node;
-	}
-	else
-	{
-		if (deq->last != NULL)
-			deq->last->next = new_node;
-		deq->last = new_node;
-	}
-	return (0);
+	return (1);
 }
 
 char	*print_command(int num)

@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 01:54:32 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 03:59:57 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/07/30 08:51:47 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	push_node_back(t_deque *deq, int num)
 			deq->last->next = new_node;
 		deq->last = new_node;
 	}
+	deq->size++;
 	return (0);
 }
 
@@ -57,45 +58,54 @@ int	push_node_front(t_deque *deq, int num)
 		new_node->next = deq->first;
 		deq->first = new_node;
 	}
+	deq->size++;
 	return (0);
 }
 
 int	pop_node_front(t_deque *deq)
 {
 	t_node	*save;
+	int		savenum;
 
 	if (deq->first == NULL)
 		return (0);
+	savenum = deq->first->num;
 	save = deq->first->next;
 	free(deq->first);
 	if (save == NULL)
 	{
 		deq->first = save;
 		deq->last = save;
-		return (1);
+		deq->size--;
+		return (savenum);
 	}
 	deq->first = save;
 	save->prev = NULL;
-	return (1);
+	deq->size--;
+	return (savenum);
 }
 
 int	pop_node_back(t_deque *deq)
 {
 	t_node	*save;
+	int		savenum;
 
 	if (deq->last == NULL)
 		return (0);
+	savenum = deq->last->num;
 	save = deq->last->prev;
 	free(deq->last);
 	if (save == NULL)
 	{
 		deq->first = save;
 		deq->last = save;
-		return (1);
+		deq->size--;
+		return (savenum);
 	}
 	deq->last = save;
 	save->next = NULL;
-	return (0);
+	deq->size--;
+	return (savenum);
 }
 
 int	push_node_for_list(t_deque *deq, char *argv)
