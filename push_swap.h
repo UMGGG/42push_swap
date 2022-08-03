@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/30 09:16:05 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/08/04 00:18:19 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_deque
 	int		size;
 }	t_deque;
 
-/*atoi&split*/
 char	*ft_strndup(const char *s, size_t n);
 char	**ft_freeall(char **list);
 char	**ft_split(char const *s, char c);
@@ -88,7 +87,7 @@ int		partition(int arr[], int l, int r);
 int		*getarr(t_deque *deq, int r);
 int		get_pivot(t_deque *deq, int r);
 /*sort deque*/
-void	atob(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str, int r);
+void	atob(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str, int r, int f);
 void	btoa(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str, int r);
 void	opt_str(t_deque *deq);
 /*optimized*/
