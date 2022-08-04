@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 04:00:41 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/08/04 00:19:46 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/08/04 18:27:27 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_deque	*make_deque(void)
 	new_deque->first = NULL;
 	new_deque->last = NULL;
 	new_deque->size = 0;
+	new_deque->do_first = 1;
 	return (new_deque);
 }
 

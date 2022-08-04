@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 18:24:02 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/08/03 03:31:14 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/08/04 18:27:15 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	btoa(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str, int r)
 		param.i = -1;
 		while (++param.i != param.rb)
 			do_rrb(deq_b, deq_str);
-		atob(deq_a, deq_b, deq_str, param.pa, 0);
+		atob(deq_a, deq_b, deq_str, param.pa);
 		btoa(deq_a, deq_b, deq_str, param.rb);
 	}
 }
@@ -80,36 +80,31 @@ void	atob_2(t_deque *deq_a, t_deque *deq_str)
 	do_ra(deq_a, deq_str);
 }
 
-void	atob(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str, int r, int f)
+void	atob(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str, int r)
 {
-	int		pivot;
-	int		pb;
-	int		ra;
-	int		i;
-	t_node	*curr;
+	t_param	param;
 
-	i = -1;
+	set_param(&param);
 	if (r == 1)
 		do_ra(deq_a, deq_str);
 	else if (r == 2)
 		atob_2(deq_a, deq_str);
 	else
 	{
-		pb = 0;
-		ra = 0;
-		pivot = get_pivot(deq_a, r);
-		while (++i < r)
+		param.pivot = get_pivot(deq_a, r);
+		while (++param.i < r)
 		{
-			curr = deq_a->first;
-			if (curr->num < pivot)
-				ra += do_ra(deq_a, deq_str);
+			param.curr = deq_a->first;
+			if (param.curr->num < param.pivot)
+				param.ra += do_ra(deq_a, deq_str);
 			else
-				pb += do_pb(deq_a, deq_b, deq_str);
+				param.pb += do_pb(deq_a, deq_b, deq_str);
 		}
-		i = -1;
-		while (++i != ra && f != 1)
+		param.i = -1;
+		while (++param.i != param.ra && deq_a->do_first != 1)
 			do_rra(deq_a, deq_str);
-		atob(deq_a, deq_b, deq_str, ra, 0);
-		btoa(deq_a, deq_b, deq_str, pb);
+		deq_a->do_first = 0;
+		atob(deq_a, deq_b, deq_str, param.ra);
+		btoa(deq_a, deq_b, deq_str, param.pb);
 	}
 }
