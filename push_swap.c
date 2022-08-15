@@ -6,16 +6,11 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:13 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/08/08 18:21:43 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:35:23 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ls(void)
-{
-	system("leaks push_swap");
-}
 
 int	main(int argc, char **argv)
 {

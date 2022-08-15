@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:57:14 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/30 08:57:47 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:36:24 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*print_command(int num)
 		return ("rra\n");
 	else if (num == 10)
 		return ("rrb\n");
-	else
+	else if (num == 11)
 		return ("rrr\n");
 }
 

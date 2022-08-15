@@ -6,14 +6,13 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 21:45:19 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/08/04 18:26:59 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:35:34 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <fcntl.h>
 # include "inc/ft_printf/ft_printf.h"
 
@@ -90,10 +89,15 @@ int		get_pivot(t_deque *deq, int r);
 /*sort deque*/
 void	atob(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str, int r);
 void	btoa(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str, int r);
-void	opt_str(t_deque *deq);
+void	btoa_2(t_deque *deq_a, t_deque *deq_b, t_deque *deq_str);
+void	atob_2(t_deque *deq_a, t_deque *deq_str);
 /*optimized*/
 void	next_command(t_deque *deq);
 int		delete_command(t_deque *deq);
 int		change_command(t_deque *deq, int num);
+void	opt_str(t_deque *deq);
+int		check12345(t_deque *deq);
+int		check6789(t_deque *deq);
+int		check1011(t_deque *deq);
 
 #endif
