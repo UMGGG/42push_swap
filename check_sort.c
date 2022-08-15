@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 02:57:14 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/08/15 16:36:24 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:40:54 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	*print_command(int num)
 		return ("rrb\n");
 	else if (num == 11)
 		return ("rrr\n");
+	else
+		return (NULL);
 }
 
 int	print_deq(t_deque *deq)
