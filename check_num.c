@@ -6,7 +6,7 @@
 /*   By: jaeyjeon <@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:22:22 by jaeyjeon          #+#    #+#             */
-/*   Updated: 2022/07/29 03:51:11 by jaeyjeon         ###   ########.fr       */
+/*   Updated: 2022/08/17 02:29:50 by jaeyjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	check_argv(int argc, char **argv)
 
 	i = 0;
 	if (argc == 1)
-		return_error(1);
+		exit(0);
 	while (++i != argc)
 	{
 		str = argv[i];
